@@ -1,10 +1,10 @@
-# HANDLEBARS JS: LEARNING PATH
-
 O handlebars é uma biblioteca Javascript que compila templates HTML,
 com base em dados JSON, fazendo então um "espelhamento" dos dados JSON no HTML,
 tudo isso com base na chamada das chaves dos dados JSON.
 
-https://handlebarsjs.com/
+lib: https://handlebarsjs.com/
+repo: https://github.com/RazielRodrigues/js-handlebars-learning-path
+projeto online: https://razielrodrigues.github.io/js-handlebars-learning-path/
 
 ## Começando com o Handlebars
 
@@ -182,17 +182,17 @@ podendo ser encadeado com else if e tambem com else, ficando algo como:
                 </p>
             {{/if}}
 
-## RENDERIZANDO TEMPLATE COM DADOS JSON EXTERNOS USANDO JQUERY
+## Renderizando dados com o JQUERY
 
-            $(document).ready(function() {
+        $(document).ready(function() {
             const template = $('#handlebars-template').html();
             const compiledTemplate = Handlebars.compile(template);
             $.ajax("data/profiles.json").done(function(data) {
                 $('#content-inject').html(compiledTemplate(data));
             });
-            });
+        });
 
-## HELPERS: FUNÇÕES DE AJUDAS
+## Helpers
 
 Com os helpers podemos registrar nossos proprios blocos {{CapitalizarLetra 'parametro'}} que nos ajudam a formatar os textos ou outras coisas.
 
@@ -217,7 +217,7 @@ Para usar um helper primeiro devemos registrar ele:
                 zipcode: {{zipcode}}
             {{/makeTitle}}
 
-## DELEGAÇÃO DE EVENTOS NOS ELEMENTOS DO TEMPLATE
+## Eventos
 
 Como o template é renderizado depois da pagina os objetos nao são identificados pelo dom, para isso precisamos
 criar uma função que busque pelos elementos HTML pós renderização e assim poder capturar os eventos:
@@ -229,7 +229,7 @@ criar uma função que busque pelos elementos HTML pós renderização e assim p
             });
 
 
-## ESCOLHENDO UM DADO ESPECIFICIO NA ESTRUTURA
+## Select em dados
 
 Para escolher um dado especidifico na estrutura vamos passar o indice do array clicado via parametro GET
 depois vamos procurar na URL o valor do ID que foi enviado e assim renderizar em outra página apenas o dado especifico.
@@ -268,7 +268,7 @@ da URL como indice do array assim exibindo apenas um perfil na pagina details.
            $('#content-inject').html(compiledTemplate(data));
          }
 
-## HANDLEBARS: PARTIALS
+## Partials
 
 O partials no handlebars consiste em voce separar pequenas partes do codigo e usar elas 
 apenas fazendo a referencia de uma tag {{> nomePartials}}
